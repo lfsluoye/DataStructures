@@ -22,7 +22,7 @@ public class Array<E> {
     public int getSize() {
         return size;
     }
-    
+
     // 返回数组是否为空
     public boolean isEmpty() {
         return size == 0;
@@ -57,12 +57,19 @@ public class Array<E> {
         size ++;
     }
 
-    // 获得index索引位置的元素
-    public E get(int index) {
-        if (index < 0 || index >= size) {
+    // 获取index索引位置的元素
+    public E get(int index){
+        if(index < 0 || index >= size)
             throw new IllegalArgumentException("Get failed. Index is illegal.");
-        }
         return data[index];
+    }
+
+    public E getLast(){
+        return get(size - 1);
+    }
+
+    public E getFirst(){
+        return get(0);
     }
 
     // 修改index索引位置的元素为e
@@ -116,6 +123,11 @@ public class Array<E> {
     }
 
     // 从数组中删除最后一个元素, 返回删除的元素
+    public E removeLast() {
+        return remove(size-1);
+    }
+
+    // 从数组中删除一个元素
     public void removeElement(E e) {
         int index = find(e);
         if (index != -1) {
