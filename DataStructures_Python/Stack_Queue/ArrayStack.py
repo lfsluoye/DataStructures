@@ -3,7 +3,7 @@ import sys,os
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, path)
 from base import StackBase
-from Arrays.array import Array
+from array import Array
 class ArrayStack(StackBase):
     """使用自定义的Array实现"""
     def __init__(self, capacity=0):

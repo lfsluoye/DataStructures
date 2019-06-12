@@ -99,6 +99,18 @@ public class LinkedList<E> {
         return get(size-1);
     }
 
+    // 修改链表的第index(0-based)个位置的元素为e
+    // 在链表中不是一个常用的操作，练习用：）
+    public void set(int index, E e){
+        if(index < 0 || index >= size)
+            throw new IllegalArgumentException("Set failed. Illegal index.");
+
+        Node cur = dummyHead.next;
+        for(int i = 0 ; i < index ; i ++)
+            cur = cur.next;
+        cur.e = e;
+    }
+
     //查询链表中是否有元素e
     public boolean contails(E e) {
         Node cur = dummyHead.next;
