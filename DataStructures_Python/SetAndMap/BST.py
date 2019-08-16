@@ -174,6 +174,9 @@ class BST:
             node.left = node.right = None
             return successor
 
+    def remove(self, e):
+        self._root = self._remove(self._root, e)
+
     def _generate_depth_string(self, depth):
         res = ''
         for i in range(depth):
