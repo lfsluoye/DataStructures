@@ -98,6 +98,18 @@ class Array:
             new_data[i] = self._data[i]
         self._data = new_data
 
+    def swap(self, i, j):
+	    if i < 0 or i >= self._size or j < 0 or j >= self._size:
+	        raise ValueError('Index is illegal.')
+	    self._data[i], self._data[j] = self._data[j], self._data[i]
+
+    def __str__(self):
+        return str(
+            '<chapter_02_Array.array.Array> : {}, capacity: {}'.format(self._data[:self._size], self.get_capacity()))
+
+    def __repr__(self):
+        return self.__str__()
+
 if __name__ == '__main__':
     arr = Array()
     for i in range(10):
